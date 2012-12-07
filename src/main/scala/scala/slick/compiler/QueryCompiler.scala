@@ -88,7 +88,8 @@ object QueryCompiler {
     Phase.convertToComprehensions,
     Phase.fuseComprehensions,
     Phase.fixRowNumberOrdering,
-    Phase.assignTypes
+    Phase.assignTypes,
+    Phase.liftClientOps
   )
 
   /** The default compiler */
@@ -129,6 +130,7 @@ object Phase {
   val convertToComprehensions = new ConvertToComprehensions
   val fuseComprehensions = new FuseComprehensions
   val fixRowNumberOrdering = new FixRowNumberOrdering
+  val liftClientOps = new LiftClientOps
 }
 
 /** The mutable state of a compiler run, consisting of immutable state of
